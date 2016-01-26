@@ -63,6 +63,7 @@ function f() {
     console.log(x);
     y = 'def';
 }
+```
 
 ### 作用域链
 
