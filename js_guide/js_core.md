@@ -29,8 +29,96 @@ var global = (function(){
 
 js是弱类型语言。检测数据类型是必要的。
 
+主要通过typeof，Object.prototype.toString及其它hack方法。
+
+#### number
+
 ```javascript
-// code
+var isNumber = function (value) {
+    return typeof value === 'number'; // 对NaN也返回true
+}
+
+// 改进
+var isNumber = function (value) {
+    return value === +value;
+}
+```
+
+#### string
+
+```javascript
+var isString = function (value) {
+    return typeof value === 'string';
+}
+```
+
+#### boolean
+
+```javascript
+var isBoolean = function (value) {
+    return typeof value === 'boolean';
+}
+```
+
+#### undefined
+
+```javascript
+var isUndefined = function (value) {
+    return typeof value === 'undefined';
+}
+```
+#### object
+
+```javascript
+var isObject = function (value) {
+    return value !== null && typeof value === 'object';
+}
+
+var isEmptyObject = function (obj) {
+    var name;
+    for (name in obj) {
+        return false;
+    }
+    return true;
+}
+```
+
+#### array
+
+```javascript
+var isArray = Array.isArray;
+
+var isArraylike = function (obj) {
+    var length = 'length' in obj && obj.length,
+        type = typeof obj;
+
+    if (type === 'function' || (obj != null && obj === obj.window)) {
+        return false;
+    }
+
+    return type === 'array' || length === 0 ||
+        typeof length === 'number' && length > 0 && (length - 1) in obj;
+}
+```
+
+#### function
+
+```javascript
+var isFunction = function (obj) {
+    return typeof obj === 'function';
+}
+```
+
+#### date, regExp
+
+```javascript
+var isDate = function (obj) {
+    return Object.prototype.toString.call(obj) === '[object Date]';
+}
+
+var isRegExp = function (obj) {
+    return Object.prototype.toString.call(obj) === '[object RegExp]';
+}
 ```
 
 
