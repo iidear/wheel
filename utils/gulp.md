@@ -61,7 +61,9 @@ gulp.src('client/js/**/*.js', {base: 'client'})
 //       任务可以异步执行，如果fn能做到以下其中一点：接受一个callback || 返回一个stream || 返回一个promise
 ```
 
-### gulp.watch(glob [,opts], tasks) || gulp.watch(glob [,opts, cb]) // 文件改动的时候返回一个EventEmitter 来发射change事件
+### gulp.watch(glob [,opts], tasks) || gulp.watch(glob [,opts, cb])
+
+文件改动的时候返回一个EventEmitter 来发射change事件
 
 ## 插件
 
