@@ -8,7 +8,7 @@
 
 js对象除了有自身的属性，每个对象还拥有三个相关的对象特性：*原型（prototype）*，*类（class）*，*扩展标记（extensible flag）*。
 
-1. 原型（prototype）
+1.原型（prototype）
 
 对象的原型属性是用来继承属性的。
 
@@ -18,11 +18,11 @@ js对象除了有自身的属性，每个对象还拥有三个相关的对象特
 
 要想检测一个对象是否是另一个对象的原型（或处于原型链中），使用isPrototypeOf()方法。
 
-2. 类（class）
+2.类（class）
 
 对象的类属性是一个字符串，用以表示对象的类型信息。通过默认的toString()方法获得的字符串[object class]判断。
 
-3. 扩展标记（extensible flag）
+3.扩展标记（extensible flag）
 
 对象的可扩展性用以表示是否可以给对象添加新属性。
 
